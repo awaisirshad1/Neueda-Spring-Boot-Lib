@@ -28,17 +28,17 @@ public class Periodical {
 
     @Getter
     @Setter
-    private boolean borrowable;
+    private Boolean isBorrowable;
 
     public Periodical(){}
 
-    public Periodical(String title, String genre, String author, Long id, boolean borrowable){
+    public Periodical(String title, String genre, String author, Long id, Boolean isBorrowable){
         super();
         this.id = id;
         this.title = title;
         this.genre = genre;
         this.author = author;
-        this.borrowable = borrowable;
+        this.isBorrowable = isBorrowable;
     }
 
 
