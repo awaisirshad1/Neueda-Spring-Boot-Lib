@@ -39,4 +39,6 @@ public class Book {
     }
 
 
+    public void setId(Object o) {
+    }
 }
