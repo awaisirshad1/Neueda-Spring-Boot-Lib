@@ -37,4 +37,10 @@ public class BookController {
         bookRepository.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PostMapping("/books")
+    public Book returnBook(@RequestBody Book book) {
+        book.setId(null);
+        return bookRepository.save(book);
+    }
 }
