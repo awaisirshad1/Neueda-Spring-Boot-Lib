@@ -4,35 +4,32 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
-public class Book {
+public class CD {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Getter
-    @Setter
-    private String title;
 
-    @Getter
-    @Setter
-    private String genre;
+    public String title;
 
-    @Getter
-    @Setter
-    private String author;
+    public String artist;
 
-    public Book(){}
+    public String album;
 
-    public Book(String title, String genre, String author){
+    public int year;
+
+    public String genre;
+
+    public CD(){}
+
+    public CD(String title, String artist, String album, int year, String genre) {
         this.title = title;
+        this.artist = artist;
+        this.album = album;
+        this.year = year;
         this.genre = genre;
-        this.author = author;
     }
-
-
 }

@@ -1,7 +1,9 @@
 package com.Neueda.Library.config;
 
 import com.Neueda.Library.model.Book;
+import com.Neueda.Library.model.CD;
 import com.Neueda.Library.repository.BookRepository;
+import com.Neueda.Library.repository.CDRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,14 +11,12 @@ import org.springframework.context.annotation.Configuration;
 import java.util.List;
 
 @Configuration
-public class DBInitializer_Book {
+public class CDInitializer_CD {
     @Bean
-    CommandLineRunner initDatabase(BookRepository bookRepository){
+    CommandLineRunner initDatabase(CDRepository cdRepository){
         return args -> {
-            var books = List.of(
-                    new Book("harry potter and the prisoner of azkaban", "Fantasy", "J.K Rowling" )
-            );
-            bookRepository.saveAll(books);
+            var cds = List.of(new CD("Reputation", "Taylor Swift", "Reputation", 2017, "Pop" ));
+            cdRepository.saveAll(cds);
         };
     }
 }
