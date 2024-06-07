@@ -30,7 +30,9 @@ public class Book {
 
     public Book(){}
 
-    public Book(String title, String genre, String author){
+    public Book(String title, String genre, String author, Long id){
+        super();
+        this.id = id;
         this.title = title;
         this.genre = genre;
         this.author = author;
