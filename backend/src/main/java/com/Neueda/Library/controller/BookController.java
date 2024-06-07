@@ -12,11 +12,18 @@ import java.util.List;
 @RestController
 @CrossOrigin(value = "true")
 public class BookController {
-    @Autowired
     private BookRepository bookRepository;
 
+    public BookController(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
     @GetMapping("/books")
     public List<Book> getBooks(){
         return bookRepository.findAll();
+    }
+
+    @GetMapping("/")
+    public String helloWorld() {
+        return "Hello!";
     }
 }
